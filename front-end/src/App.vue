@@ -1,5 +1,6 @@
 <template>
   <h1>HelloWorld</h1>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -7,7 +8,7 @@
 export default {
   name: 'App',
   components: {
-    
+
   }
 }
 </script>

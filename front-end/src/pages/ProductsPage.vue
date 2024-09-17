@@ -1,10 +1,10 @@
 <template>
-    <h1> Products Pagge   </h1>
+    <h1> Products Page   </h1>
 </template>
 
 
 <script>
     export default {
-        name: "Products Page",
+        name: "ProductsPage",
     }
 </script>
