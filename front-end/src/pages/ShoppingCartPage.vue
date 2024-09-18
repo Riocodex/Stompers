@@ -2,7 +2,9 @@
   <h1>Shopping Cart</h1>
   <div v-if="cartItems.length > 0">
     <div class="product-container" v-for="product in cartItems" :key="product.id">
-      <img class="product-image" :src="product.imager" />
+      <!-- No need for require here -->
+      <img class="product-image" :src="product.imageName" />
+
       <div class="details-wrap">
         <h3>{{ product.name }}</h3>
         <p>{{ product.price }}</p>
@@ -12,7 +14,7 @@
     <button class="checkout-button">Proceed to Checkout</button>
   </div>
   <div v-if="cartItems.length === 0">
-    You current have no items in your cart!
+    You currently have no items in your cart!
   </div>
 </template>
 
@@ -23,7 +25,7 @@ export default {
   name: "ShoppingCartPage",
   data() {
     return {
-      cartItems,
+      cartItems,  // Use the cartItems from temp-data with resolved image paths
     }
   }
 }

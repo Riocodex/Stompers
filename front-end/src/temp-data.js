@@ -11,7 +11,7 @@ export const cartItems = [{
     id: '123',
     name: 'Basil',
     price: '$26.00',
-    imagerame: basilBottle,
+    imageName: basilBottle,  // Use the resolved path from the imported image
 }, {
     id: '234',
     name: 'Lemon',
@@ -22,7 +22,8 @@ export const cartItems = [{
     name: 'Garlic',
     price: '$26.00',
     imageName: garlicBottle,
-}, ]
+}];
+
 
 export const products = [{
     id: '123',
