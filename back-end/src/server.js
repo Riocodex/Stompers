@@ -1,7 +1,11 @@
 import express from 'express'
-import { cartItems, products } from './temp-data';
+import { cartItems as cartItemsRaw, products as productItemsRaw } from './temp-data';
+
+let cartItems = cartItemsRaw;
+let products=productItemsRaw;
 
 const app = express();
+app.use(express.json())
 
 app.get('/hello',(req,res)=>{
     res.send('Hello!')
