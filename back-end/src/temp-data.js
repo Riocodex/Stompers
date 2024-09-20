@@ -1,11 +1,4 @@
-// import basilBottle from './assets/basil-bottle.webp';
-// import lemonBottle from './assets/lemon-bottle.webp';
-// import garlicBottle from './assets/garlic-bottle.webp';
-// import rosemaryBottle from './assets/rosemary-bottle.webp';
-// import chiliBottle from './assets/chili-bottle.webp';
-// import delicateBottle from './assets/delicate-bottle.webp';
-// import mediumBottle from './assets/medium-bottle.webp';
-// import boldBottle from './assets/bold-bottle.webp';
+
 
 export const cartItems = ['123','345'];
 
