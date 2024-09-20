@@ -16,7 +16,9 @@ app.get('/products',(req,res)=>{
 })
 
 app.get('/cart',(req,res)=>{
-    res.json(cartItems)
+    const populatedCart = cartItems.map(id => products.find(product=>product.id === id));//map ids to te product and show te product instead of the ids
+    res.json(populatedCart)
+    
 })
 
 app.get('/products/:productId',(req,res)=>{
@@ -30,6 +32,12 @@ app.post('/cart',(req,res)=>{
     const product = products.find(product=>product.id === productId);
     cartItems.push(product);
     res.json(cartItems);
+})
+
+app.delete('/cart/:productId',(req,res)=>{
+    const productId = req.params.productId;
+    cartItems = cartItems.filter(product => product.id !== productId)
+    res.json(cartItems)
 })
 
 app.listen(8000, ()=>{
