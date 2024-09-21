@@ -1,14 +1,22 @@
 import express from 'express'
+import { MongoClient } from 'mongodb'
 import { cartItems as cartItemsRaw, products as productItemsRaw } from './temp-data';
 
 let cartItems = cartItemsRaw;
 let products=productItemsRaw;
+const url = `mongodb+srv://fsv-server:riodboss@cluster0.gwijy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
+
+const client = new MongoClient(url)
 
 const app = express();
 app.use(express.json())
 
-app.get('/hello',(req,res)=>{
-    res.send('Hello!')
+app.get('/hello',async (req,res)=>{
+    await client.connect()
+    const db = client.db('fsv-db')
+    const products = await db.collection('products').find({})
+    res.send(products)
+
 })
 
 app.get('/products',(req,res)=>{
